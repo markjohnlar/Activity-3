@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <style>
+        :root {
+            --primary-color: #4a34c8;
+            --secondary-color: #b8b8ff;
+            --background-color: #f8f7ff;
+            --gray-background: #e0e0e0;
+            --border-radius: 15px;
+            --padding: 20px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background-color);
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+        }
+
+        main {
+            background-color: var(--gray-background);
+            border-radius: var(--border-radius);
+            padding: var(--padding);
+            max-width: 600px;
+            width: 90%;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3a26d3;
+        }
+
+        .form-button {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 480px) {
+            main {
+                width: 95%;
+            }
+
+            input,
+            textarea,
+            select {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 8px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Registration</h1>
+        <form action="action.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter username" minlength="5" maxlength="10" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter password" minlength="5" maxlength="10" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="datetime">Date/Time</label>
+                <input type="datetime-local" name="datetime" id="datetime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select name="country" id="country" required>
+                    <option value="" disabled selected>--Select Country--</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="australia">Australia</option>
+                    <option value="philippines">Philippines</option>
+                </select>
+            </div>
+
+            <div class="checkbox-form">
+                <input type="checkbox" id="programming" name="skills[]" value="programming">
+                <label for="programming">Programming</label>
+                <input type="checkbox" id="java" name="skills[]" value="java">
+                <label for="java">Java</label>
+                <input type="checkbox" id="web" name="skills[]" value="web">
+                <label for="web">Web</label>
+            </div>
+
+            <div class="form-group">
+                <label for="file">Upload File</label>
+                <input type="file" name="file" id="file" accept=".jpg, .png">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea name="address" id="address" rows="5" required></textarea>
+            </div>
+
+            <div class="form-button">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
